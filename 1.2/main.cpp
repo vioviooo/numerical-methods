@@ -140,7 +140,7 @@ int main() {
         fin >> d[i];
     }
 
-    std::cout << ((isStableABC(a,b,c)) ? "> Диагональное преобладание проверено.\n" : "Не диагональное преобладание.\n");
+    std::cout << ((isStableABC(a,b,c)) ? "> Метод прогонки устойчив.\n" : "Метод прогонки НЕ устойчив.\n");
     
     auto [p, q, x] = std::make_tuple(vector<double>{}, vector<double>{}, vector<double>{});
     try {
