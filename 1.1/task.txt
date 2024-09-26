@@ -1,0 +1,5 @@
+Gauss elimination with partial pivoting
+
+
+Solution:
+0.000000 -5.000000 3.000000 -5.000000 
