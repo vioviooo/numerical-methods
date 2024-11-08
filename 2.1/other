@@ -1,0 +1,8 @@
+
+// double newton(double x0, double epsilon) {
+//     double x = x0;
+//     while (fabs(f(x)) > epsilon) {
+//         x = x - f(x) / f_prime(x);
+//     }
+//     return x;
+// }
