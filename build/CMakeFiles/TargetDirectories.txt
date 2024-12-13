@@ -1,0 +1,5 @@
+/Users/vioviooo/Desktop/numerical-methods/build/CMakeFiles/edit_cache.dir
+/Users/vioviooo/Desktop/numerical-methods/build/CMakeFiles/rebuild_cache.dir
+/Users/vioviooo/Desktop/numerical-methods/build/puk/CMakeFiles/puk.dir
+/Users/vioviooo/Desktop/numerical-methods/build/puk/CMakeFiles/edit_cache.dir
+/Users/vioviooo/Desktop/numerical-methods/build/puk/CMakeFiles/rebuild_cache.dir

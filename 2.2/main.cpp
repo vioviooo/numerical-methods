@@ -119,6 +119,26 @@ std::tuple<double, double> newton_method(double epsilon, double a, double &x1, d
     return {x1, x2};
 }
 
+std::pair<double, double> find_x0(double a1, double b1, double a2, double b2, double a) {
+    double x1_mid = (a1 + b1) / 2.0;
+    double x2_mid = (a2 + b2) / 2.0;
+
+    if (std::abs(df1_dx1(a1, x2_mid, a)) < 1.0) {
+        return {a1, x2_mid};
+    } else if (std::abs(df1_dx1(b1, x2_mid, a)) < 1.0) {
+        return {b1, x2_mid};
+    }
+
+    if (std::abs(df2_dx2(x1_mid, a2, a)) < 1.0) {
+        return {x1_mid, a2};
+    } else if (std::abs(df2_dx2(x1_mid, b2, a)) < 1.0) {
+        return {x1_mid, b2};
+    }
+
+    return {x1_mid, x2_mid};
+}
+
+
 int main() {
     double epsilon = 0.0001; // Задаем точность
     double a = 4;            // Значение a
@@ -126,9 +146,10 @@ int main() {
     double a1 = 4, a2 = 0;
     double b1 = 6, b2 = 2;
 
-    // Подставляем начальные значения для области и вычисляем максимумы по модулю
-    double x1 = (a1 + b1) * 0.5;
-    double x2 = (a2 + b2) * 0.5;
+    // double x1 = (a1 + b1) * 0.5;
+    // double x2 = (a2 + b2) * 0.5;
+
+    auto [x1, x2] = find_x0(a1, b1, a2, b2, a);
 
     double maxF1 = std::max(std::abs(f1(a1, a2, a)), std::abs(f1(b1, b2, a)));
     double maxF2 = std::max(std::abs(f2(a1, a2, a)), std::abs(f2(b1, b2, a)));
