@@ -95,7 +95,7 @@ bool readDataFromFile(const std::string& filename, std::vector<double>& x, std::
             std::cerr << "Ошибка: Неверный формат данных в файле.\n";
             return false;
         }
-        x.push_back(xi * 1e-4); // * Преобразование значений x
+        x.push_back(xi); // * Преобразование значений x
         y.push_back(yi);
     }
 
@@ -106,7 +106,7 @@ bool readDataFromFile(const std::string& filename, std::vector<double>& x, std::
 int main() {
     std::vector<double> x, y;
     
-    std::string filename = "gas_data.txt";
+    std::string filename = "water_data.txt";
     if (!readDataFromFile(filename, x, y)) {
         return 1;
     }
